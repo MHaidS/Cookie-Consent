@@ -1,4 +1,3 @@
-<!-- IN PROGRESS -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +5,9 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>COOKIE CONSENT</title>
+		<title>COOKIE CONSENT
+			----> my annoying cookie consent pop-up; before you can even try to read the article itself, the banner pop-up will force you to enter your name, along w/ your email add & accept the terms & conditions
+		</title>
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 		<link rel="stylesheet" href="index.css">
@@ -17,14 +18,14 @@
 		<main>
 			<section class="section-container">
 				<h1>Learning to code? This is the most important thing you will ever read!</h1>
-
+	
 				<ul>
 					<li class="li-green">💰 Land a job with a 6 figure salary</li>
 					<li class="li-yellow">💻 Master JavaScript in 3 hours</li>
 					<li class="li-blue">⚛️ Learn React in 10 minutes</li>
 					<li class="li-pink">☕ Be a NodeJS Dev by lunchtime</li>
 				</ul>
-
+	
 				<h3>My subliminal learning technique worked for Mark Zuckerberg and Albert Einstein, and it can work for you!</h3>
 				<img src="images/bugatti.jpg">
 				<p>Want a great job in tech? Want a six-figure salary? Then you have come to the right place. I am going to tell you all
@@ -34,21 +35,34 @@
 		</main>
 		<div class="modal" id="modal">
 			<div class="close-modal-btn-container">
-				<button class="modal-close-btn" id="modal-close-btn">X</button>
+				<!-- 26.1 Make the button that closes the modal disabled. -->
+				<button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
 			</div>
 			<div class="modal-inner" id="modal-inner">
 				<h2>We ❤️ Your Data!</h2>
 				<p class="modal-text" id="modal-text">We have a strict policy on tracking and spamming: we'll definitely track you, and we'll definitely spam you. To use this
 					site, enter your name and email address and accept our ridiculous terms and conditions.</p>
 				<form id="consent-form">
-					<input type="text" name="fullName" placeholder="Enter your full name" required/>
-					<input type="email" name="email" placeholder="Enter your email" required/>
-
+					<input 
+						type="text" 
+						name="fullName" 
+						placeholder="Enter your full name" 
+						aria-label="Full name"
+						required
+					/>
+					<input 
+						type="email" 
+						name="email" 
+						placeholder="Enter your email" 
+						aria-label="Email address"
+						required
+					/>
+	
 					<div class="modal-choice-btns" id="modal-choice-btns">
 						<button type="submit" class="modal-btn">Accept</button>
-						<button class="modal-btn">Decline</button>
+						<button class="modal-btn" id="decline-btn">Decline</button>
 					</div>
-
+	
 				</form>
 			</div>
 		</div>
@@ -57,3 +71,13 @@
 
 </html>
 
+<!-- 
+=> setTimeout ===> to ctrl when the modal pop-up appears
+=> element.style ===> to dynamically update an element's css properties
+=> forms ===> created a form w/ the input types of 'text' & 'email'
+=> formData & .get() ===> formData was used to get data fr the form as an object & the .get() was used to actually access that data in order to be used in this app
+=> event.preventDefault ===> to get more control over how we submit our forms
+=> CSS: row-reverse ===> a neat & nasty way of preventing the users to hit the decline button using 'flex-direction: row-reverse'
+=> toggling classes ===> classes were toggled on & off
+=> 'disabled' attribute ===> blocked users fr using the 'close' button
+ -->
